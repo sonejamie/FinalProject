@@ -1,0 +1,176 @@
+package com.ccgg.beans;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "bank.personalinfo")
+
+public class PersonalInformation {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	@Column(name = "name", nullable = false)
+	private String name;
+	@Column(name = "DOB", nullable = false)
+	private Date DOB;
+	@Column(name = "Street Address", nullable = false)
+	private String StreetAddress;
+	@Column(name = "state", nullable = false)
+	private String state;
+	@Column(name = "zipcode", nullable = false)
+	private String zipcode;
+	@Column(name = "salary", nullable = false)
+	private double salary;
+	@Column(name = "education level", nullable = false)
+	private String educationlevel;
+	@Column(name = "SSN", nullable = false)
+	private String SSN;
+	@Column(name = "FICO", nullable = false)
+	private int FICO;
+	@Column(name = "Mortgage", nullable = false)
+	private int Mortgage;
+	
+	@OneToOne
+	@JoinColumn(name = "user_id")
+	private User user;
+	
+	public PersonalInformation() {
+		
+		
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Date getDOB() {
+		return DOB;
+	}
+
+	public void setDOB(Date dOB) {
+		DOB = dOB;
+	}
+
+	public String getStreetAddress() {
+		return StreetAddress;
+	}
+
+	public void setStreetAddress(String streetAddress) {
+		StreetAddress = streetAddress;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getZipcode() {
+		return zipcode;
+	}
+
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+
+	public double getSalary() {
+		return salary;
+	}
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+
+	public String getEducationlevel() {
+		return educationlevel;
+	}
+
+	public void setEducationlevel(String educationlevel) {
+		this.educationlevel = educationlevel;
+	}
+
+	public String getSSN() {
+		return SSN;
+	}
+
+	public void setSSN(String sSN) {
+		SSN = sSN;
+	}
+
+	public int getFICO() {
+		return FICO;
+	}
+
+	public void setFICO(int fICO) {
+		FICO = fICO;
+	}
+
+	public int getMortgage() {
+		return Mortgage;
+	}
+
+	public void setMortgage(int mortgage) {
+		Mortgage = mortgage;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public PersonalInformation(String name, Date dOB, String streetAddress, String state, String zipcode, double salary,
+			String educationlevel, String sSN, int fICO, int mortgage, User user) {
+		super();
+		this.name = name;
+		DOB = dOB;
+		StreetAddress = streetAddress;
+		this.state = state;
+		this.zipcode = zipcode;
+		this.salary = salary;
+		this.educationlevel = educationlevel;
+		SSN = sSN;
+		FICO = fICO;
+		Mortgage = mortgage;
+		this.user = user;
+	}
+	
+	
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+
+}
