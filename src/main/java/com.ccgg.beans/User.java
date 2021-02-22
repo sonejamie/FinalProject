@@ -53,8 +53,20 @@ public class User implements UserDetails {
 	@OneToOne
 	private SavingsAccount savingsAccount; 
 	
+	@OneToOne
+	private PersonalInformation personalInformation;
+	
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password=" + password + ", firstname=" + firstname
+				+ ", lastname=" + lastname + ", email=" + email + ", phone=" + phone + ", profiles=" + profiles
+				+ ", primaryAccount=" + primaryAccount + ", savingsAccount=" + savingsAccount + ", personalInformation="
+				+ personalInformation + "]";
+	}
+
 	public User(int id, String username, String password, String firstname, String lastname, String email, String phone,
-			List<UserProfile> profiles, PrimaryAccount primaryAccount, SavingsAccount savingsAccount) {
+			List<UserProfile> profiles, PrimaryAccount primaryAccount, SavingsAccount savingsAccount,
+			PersonalInformation personalInformation) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -66,13 +78,15 @@ public class User implements UserDetails {
 		this.profiles = profiles;
 		this.primaryAccount = primaryAccount;
 		this.savingsAccount = savingsAccount;
+		this.personalInformation = personalInformation;
 	}
 
-	@Override
-	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", password=" + password + ", firstname=" + firstname
-				+ ", lastname=" + lastname + ", email=" + email + ", phone=" + phone + ", profiles=" + profiles
-				+ ", primaryAccount=" + primaryAccount + ", savingsAccount=" + savingsAccount + "]";
+	public PersonalInformation getPersonalInformation() {
+		return personalInformation;
+	}
+
+	public void setPersonalInformation(PersonalInformation personalInformation) {
+		this.personalInformation = personalInformation;
 	}
 
 	public PrimaryAccount getPrimaryAccount() {
