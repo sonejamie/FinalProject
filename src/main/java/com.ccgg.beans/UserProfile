@@ -1,0 +1,58 @@
+package com.ccgg.beans;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+
+import org.springframework.security.core.GrantedAuthority;
+
+@Entity //jpa or mapping
+@Table(name = "bank_user_profile")//跟entity一起用
+public class UserProfile implements GrantedAuthority {
+	private static final long serialVersionUID = 1L;
+	@Id
+	private int id;
+	@Column
+	private String type;
+	
+	public UserProfile (int id) {
+		super();
+		this.id = id;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public String getTypre() {
+		return type;
+	}
+	
+	public void setTypr(String type) {
+		this.type = type;
+	}
+	
+	public static long getSerialversionid() {
+		return serialVersionUID;
+	}
+	
+	public UserProfile() {
+		super();
+	}
+	
+	@Override
+	public String toString() {
+		return "UserProfile [id=" + id + ", typr=" + type + "]";
+	}
+	
+	@Override
+	public String getAuthority() {
+		return type;
+}
+
+}
