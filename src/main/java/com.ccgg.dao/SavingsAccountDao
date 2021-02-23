@@ -1,0 +1,11 @@
+package com.ccgg.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.ccgg.beans.SavingsAccount;
+
+public interface SavingsAccountDao extends JpaRepository<SavingsAccount, Integer>{
+	
+SavingsAccount findbyAccountNumber (int accountNumber);
+
+}
