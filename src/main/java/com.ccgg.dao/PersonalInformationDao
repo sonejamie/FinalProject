@@ -1,0 +1,11 @@
+package com.ccgg.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.ccgg.beans.PersonalInformation;
+
+public interface PersonalInformationDao extends JpaRepository<PersonalInformation, Integer > {
+	
+	PersonalInformation findByName (String name);
+
+}
