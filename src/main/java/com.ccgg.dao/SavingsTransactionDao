@@ -1,0 +1,13 @@
+package com.ccgg.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.ccgg.beans.SavingsTransaction;
+
+public interface SavingsTransactionDao extends JpaRepository<SavingsTransaction, Integer>{
+	
+	List<SavingsTransaction> findALL();
+
+}
