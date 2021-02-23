@@ -1,0 +1,11 @@
+package com.ccgg.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.ccgg.beans.PrimaryAccount;
+
+public interface PrimaryAccountDao extends JpaRepository<PrimaryAccount, Integer>{
+	PrimaryAccount findByAccountNumber (int accountNumber);
+	
+
+}
